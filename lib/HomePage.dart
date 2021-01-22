@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_starter/views/FirstRoute.dart';
+import 'package:flutter_starter/views/SecondRoute.dart';
+import 'package:flutter_starter/views/ThirdRoute.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -14,7 +17,8 @@ class _HomePageState extends State<HomePage> {
   int _counter = 0;
 
   int _selectedIndex = 0;
-  static const TextStyle optionStyle = TextStyle(fontSize: 15, fontWeight: FontWeight.normal, color: Colors.blue);
+  static const TextStyle optionStyle = TextStyle(
+      fontSize: 15, fontWeight: FontWeight.normal, color: Colors.blue);
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
       'Index 0: Home',
@@ -87,6 +91,41 @@ class _HomePageState extends State<HomePage> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      getScreen(_selectedIndex);
     });
+  }
+
+  void getScreen(int selectedIndex) {
+    StatelessWidget route;
+
+    switch (selectedIndex) {
+      case 0:
+        {
+          route = FirstRoute();
+        }
+        break;
+
+      case 1:
+        {
+          route = SecondRoute();
+        }
+        break;
+
+      case 2:
+        {
+          route = ThirdRoute();
+        }
+        break;
+      default:
+        {
+          //statements;
+        }
+        break;
+    }
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) => route), // Navigate to second route when tapped.
+    );
   }
 }
