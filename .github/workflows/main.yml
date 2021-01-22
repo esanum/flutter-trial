@@ -35,7 +35,7 @@ jobs:
 
       # Consider passing '--fatal-infos' for slightly stricter analysis.
       - name: Analyze project source (type checking, etc)
-        run: dart analyze
+        run: flutter analyze
 
       # Run flutter tests
       - name: Run tests
