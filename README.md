@@ -1,6 +1,6 @@
 # flutter-trial
 
-A new Flutter project. Just evaluating flutter.
+A new Flutter project. Just evaluating flutter
 
 ## Getting Started
 
