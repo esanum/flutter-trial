@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starter/views/WebViewContainer.dart';
 
 import 'HomePage.dart';
 
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(title: 'Flutter Trial'),
+      // home: HomePage(title: 'Flutter Trial'),// fixme now change
+      home: WebViewContainer('https://www.esanum.de', 'esanum'),
     );
   }
 }
