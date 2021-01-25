@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -34,6 +36,11 @@ class FirstRoute extends StatelessWidget {
             ElevatedButton(
               child: Text('Go back home'),
               onPressed: () {
+                if (Platform.isAndroid) {
+                  throw "This is a crash Android!";
+                } else if (Platform.isIOS) {
+                  throw "This is a crash iOS!";
+                }
                 Navigator.popUntil(context, ModalRoute.withName('/'));// Navigate back to home
               },
             ),

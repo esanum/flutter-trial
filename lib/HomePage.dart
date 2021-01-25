@@ -4,8 +4,6 @@ import 'package:flutter_starter/views/FirstRoute.dart';
 import 'package:flutter_starter/views/SecondRoute.dart';
 import 'package:flutter_starter/views/ThirdRoute.dart';
 
-import 'main.dart';
-
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
 
@@ -91,18 +89,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _onItemTapped(int index) {
-    setState(() async {
+    setState(() {
       _selectedIndex = index;
       getScreen(_selectedIndex);
 
-      // try {
-      //   throw "This is a crash inside try/catch!";
-      // } catch (error, stackTrace) {
-      //   await sentry.captureException(
-      //     exception: error,
-      //     stackTrace: stackTrace,
-      //   );
-      // }
       throw "This is a crash!";
     });
   }
