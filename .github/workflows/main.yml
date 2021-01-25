@@ -26,6 +26,9 @@ jobs:
       - name: Print Flutter/Dart version
         run: flutter --version
 
+      - name: Copy fake-secrets for running on CI
+        run: cp .github/secret_constants.ci.dart lib/secret_constants.dart
+
       - name: Install dependencies
         run: flutter pub get
 

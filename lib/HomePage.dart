@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_starter/views/FirstRoute.dart';
 import 'package:flutter_starter/views/SecondRoute.dart';
 import 'package:flutter_starter/views/ThirdRoute.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
+import 'dart:io';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -34,7 +36,17 @@ class _HomePageState extends State<HomePage> {
     ),
   ];
 
-  void _incrementCounter() {
+  void _incrementCounter() async {
+    stdout.writeln('print me');
+    try {
+      stdout.writeln('print me');
+      throw("error");
+    } catch (exception, stackTrace) {
+      await Sentry.captureException(
+        exception,
+        stackTrace: stackTrace,
+      );
+    }
     setState(() {
       _counter++;
     });
