@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:sentry_flutter/sentry_flutter.dart';
+import 'package:sentry/sentry.dart';
 
 import 'HomePage.dart';
 
 Future<void> main() async {
-  await SentryFlutter.init(
+  await Sentry.init(
     (options) {
-      options.dsn = 'https://example@sentry.io/add-your-dsn-here';
+      options.dsn =
+          'dsn goes here';
     },
-    // Init your App.
     appRunner: () => runApp(MyApp()),
   );
 }
