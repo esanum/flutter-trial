@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/view/lists/ListviewJson.dart';
-import 'package:flutter_starter/views/SecondRoute.dart';
+import 'package:flutter_starter/views/lists/list_view_json.dart';
 import 'package:flutter_starter/views/ThirdRoute.dart';
 import 'package:flutter_starter/views/WebViewContainer.dart';
 

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'JobsListView.dart';
+
+import 'jobs_list_view.dart';
+
+//https://www.melvinvivas.com/flutter-listview-example-using-data-from-a-rest-api/
 
 class ListViewApiJson extends StatelessWidget {
   @override
