@@ -20,7 +20,6 @@ class _JobsListViewScreenState extends State<JobsListViewScreen> {
   @override
   void initState() {
     super.initState();
-    //_fetchJobs();
   }
 
   @override

@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_starter/model/news_detail.dart';
 import 'package:flutter_starter/styles.dart';
-import 'package:flutter_starter/views/details/news_info.dart';
+import 'package:flutter_starter/views/details/detail_view_news.dart';
 import 'package:http/http.dart' as http;
 
 // https://medium.com/stackavenue/flutter-fetch-data-from-api-display-in-listview-33c49670e490
