@@ -28,13 +28,15 @@ class ThirdRoute extends StatelessWidget {
             ElevatedButton(
               child: Text('Go back'),
               onPressed: () {
-                Navigator.pop(context);// Navigate back to first route when tapped.
+                Navigator.pop(
+                    context); // Navigate back to first route when tapped.
               },
             ),
             ElevatedButton(
               child: Text('Go back home'),
               onPressed: () {
-                Navigator.popUntil(context, ModalRoute.withName('/'));// Navigate back to home
+                Navigator.popUntil(
+                    context, ModalRoute.withName('/')); // Navigate back to home
               },
             ),
           ],
@@ -43,5 +45,3 @@ class ThirdRoute extends StatelessWidget {
     );
   }
 }
-
-
