@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/Styles.dart';
+import 'package:flutter_starter/styles.dart';
 import 'package:flutter_starter/model/news_detail.dart';
 
-class NewsInfo extends StatelessWidget {
+class NewsDetailScreen extends StatelessWidget {
   final NewsDetail newsDetail;
 
-  NewsInfo(this.newsDetail);
+  NewsDetailScreen(this.newsDetail);
 
   @override
   Widget build(BuildContext context) {
