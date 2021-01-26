@@ -5,9 +5,38 @@ import 'package:flutter/material.dart';
 import 'package:flutter_starter/model/job.dart';
 import 'package:http/http.dart' as http;
 
-class JobsListView extends StatelessWidget {
+import '../../styles.dart';
+
+class JobsListViewScreen extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _JobsListViewScreenState();
+  }
+}
+
+class _JobsListViewScreenState extends State<JobsListViewScreen> {
+  final List<Job> items = [];
+
+  @override
+  void initState() {
+    super.initState();
+    //_fetchJobs();
+  }
+
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+          title: Text(
+        "Job Portal",
+        style: Styles.navBarTitle,
+      )),
+      //body: _jobsListView(this.items)
+      body: projectWidget(),
+    );
+  }
+
+  Widget projectWidget() {
     return FutureBuilder<List<Job>>(
       future: _fetchJobs(),
       builder: (context, snapshot) {

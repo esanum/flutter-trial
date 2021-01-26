@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/views/lists/list_view_json.dart';
+import 'package:flutter_starter/views/lists/list_view_jobs.dart';
 import 'package:flutter_starter/views/WebViewContainer.dart';
-import 'package:flutter_starter/views/lists/news_screen.dart';
+import 'package:flutter_starter/views/lists/list_view_news_screen.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -109,7 +109,7 @@ class _HomePageState extends State<HomePage> {
       case 1:
         {
           //route = SecondRoute();
-          route = ListViewApiJson();
+          route = JobsListViewScreen();
         }
         break;
 
