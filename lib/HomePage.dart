@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/views/FirstRoute.dart';
 import 'package:flutter_starter/views/SecondRoute.dart';
 import 'package:flutter_starter/views/ThirdRoute.dart';
-
-import 'views/WebViewContainer.dart';
+import 'package:flutter_starter/views/WebViewContainer.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
