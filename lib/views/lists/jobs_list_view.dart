@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/model/Job.dart';
+import 'package:flutter_starter/model/job.dart';
 import 'package:http/http.dart' as http;
 
 class JobsListView extends StatelessWidget {
