@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/views/FirstRoute.dart';
 import 'package:flutter_starter/views/SecondRoute.dart';
 import 'package:flutter_starter/views/ThirdRoute.dart';
+import 'package:flutter_starter/views/WebViewContainer.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -96,12 +96,13 @@ class _HomePageState extends State<HomePage> {
   }
 
   void getScreen(int selectedIndex) {
-    StatelessWidget route;
+    Widget route;
 
     switch (selectedIndex) {
       case 0:
         {
-          route = FirstRoute();
+          //route = FirstRoute();
+          route = WebViewContainer('https://www.esanum.de', 'esanum');
         }
         break;
 
