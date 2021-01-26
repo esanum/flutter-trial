@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_starter/view/lists/ListviewJson.dart';
 import 'package:flutter_starter/views/SecondRoute.dart';
 import 'package:flutter_starter/views/ThirdRoute.dart';
 import 'package:flutter_starter/views/WebViewContainer.dart';
@@ -68,8 +69,8 @@ class _HomePageState extends State<HomePage> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            icon: Icon(Icons.list_sharp),
+            label: 'List view',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
@@ -108,7 +109,8 @@ class _HomePageState extends State<HomePage> {
 
       case 1:
         {
-          route = SecondRoute();
+          //route = SecondRoute();
+          route = ListViewApiJson();
         }
         break;
 
