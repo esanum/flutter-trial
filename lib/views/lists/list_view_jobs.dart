@@ -31,8 +31,7 @@ class _JobsListViewScreenState extends State<JobsListViewScreen> {
         "Job Portal",
         style: Styles.navBarTitle,
       )),
-      //body: _jobsListView(this.items)
-      body: projectWidget(),
+      body: Center(child: projectWidget()),
     );
   }
 
