@@ -28,7 +28,10 @@ dependencies:
   http: ^0.12.0+1
 
 dev_dependencies:
+  integration_test: ^1.0.0
   flutter_test:
+    sdk: flutter
+  flutter_driver:
     sdk: flutter
   test: any
 
