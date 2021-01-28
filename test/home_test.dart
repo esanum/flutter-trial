@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/main.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+import 'package:flutter_starter/main.dart';
 
 void main() {
   _testCounter();
