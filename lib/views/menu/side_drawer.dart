@@ -8,6 +8,7 @@ import 'package:flutter_starter/views/web_view_container.dart';
 // https://medium.com/@kashifmin/flutter-setting-up-a-navigation-drawer-with-multiple-fragments-widgets-1914fda3c8a8
 // https://medium.com/@maffan/how-to-create-a-side-menu-in-flutter-a2df7833fdfb
 
+// ignore: must_be_immutable
 class SideDrawer extends StatefulWidget {
   List<DrawerItem> drawerItems = <DrawerItem>[
     DrawerItem('First route', Icons.home, Colors.teal),
