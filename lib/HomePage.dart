@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/views/SecondRoute.dart';
-import 'package:flutter_starter/views/ThirdRoute.dart';
+import 'package:flutter_starter/views/lists/list_view_jobs.dart';
 import 'package:flutter_starter/views/WebViewContainer.dart';
+import 'package:flutter_starter/views/lists/list_view_news.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -64,16 +64,16 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: Icon(Icons.web),
+            label: 'Webview',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            icon: Icon(Icons.list_sharp),
+            label: 'List view',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            icon: Icon(Icons.accessibility),
+            label: 'List + Detail',
           ),
         ],
         currentIndex: _selectedIndex,
@@ -108,13 +108,15 @@ class _HomePageState extends State<HomePage> {
 
       case 1:
         {
-          route = SecondRoute();
+          //route = SecondRoute();
+          route = JobsListViewScreen();
         }
         break;
 
       case 2:
         {
-          route = ThirdRoute();
+          //route = ThirdRoute();
+          route  = NewsScreen();
         }
         break;
       default:
