@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_starter/model/menu_item.dart';
 import 'package:flutter_starter/views/bottom_navigation.dart';
-import 'package:flutter_starter/views/home_page.dart';
 import 'package:flutter_starter/views/web_view_container.dart';
 import 'package:flutter_starter/views/lists/list_view_jobs.dart';
 import 'package:flutter_starter/views/lists/list_view_news.dart';
@@ -19,11 +18,6 @@ class AppState extends State<App> {
 
   // list tabs here
   final List<MenuItem> tabs = [
-    MenuItem(
-      title: "home",
-      icon: Icons.home_rounded,
-      page: HomePage(title: 'Flutter Trial'),
-    ),
     MenuItem(
       title: "esanum",
       icon: Icons.web_rounded,
