@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_starter/model/menu_item.dart';
 import 'package:flutter_starter/views/bottom_navigation.dart';
+import 'package:flutter_starter/views/menu/side_drawer.dart';
 import 'package:flutter_starter/views/web_view_container.dart';
 import 'package:flutter_starter/views/lists/list_view_jobs.dart';
 import 'package:flutter_starter/views/lists/list_view_news.dart';
@@ -81,6 +82,10 @@ class AppState extends State<App> {
       // with multiple appbars on one screen
       // eventually breaking the app
       child: Scaffold(
+        drawer: SideDrawer(),
+        appBar: AppBar(
+          title: Text("Flutter trial"),
+        ),
         // indexed stack shows only one child
         body: IndexedStack(
           index: currentTab,
