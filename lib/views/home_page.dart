@@ -99,7 +99,6 @@ class _HomePageState extends State<HomePage> {
 
   void getScreen(int selectedIndex) {
     Widget route;
-
     switch (selectedIndex) {
       case 0:
         {
@@ -107,14 +106,12 @@ class _HomePageState extends State<HomePage> {
           route = WebViewContainer('https://www.esanum.de', 'esanum');
         }
         break;
-
       case 1:
         {
           //route = SecondRoute();
           route = JobsListViewScreen();
         }
         break;
-
       case 2:
         {
           //route = ThirdRoute();
