@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_starter/views/lists/list_view_jobs.dart';
+import 'package:flutter_starter/views/menu/side_drawer.dart';
 import 'package:flutter_starter/views/web_view_container.dart';
 import 'package:flutter_starter/views/lists/list_view_news.dart';
 
@@ -43,6 +44,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: SideDrawer(),
       appBar: AppBar(
         title: Text(widget.title),
       ),
