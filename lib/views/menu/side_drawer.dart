@@ -66,7 +66,7 @@ class SideDrawerState extends State<SideDrawer> {
       _selectedDrawerIndex = index;
       _getDrawerItemWidget(_selectedDrawerIndex);
     });
-    Navigator.of(context).pop(); // close the drawer
+    //Navigator.of(context).pop(); // close the drawer
   }
 
   @override
