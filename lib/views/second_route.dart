@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'FirstRoute.dart';
+import 'first_route.dart';
 
 class SecondRoute extends StatelessWidget {
   @override
