@@ -1,27 +1,26 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_starter/views/second_route.dart';
 
-import 'FirstRoute.dart';
-
-class SecondRoute extends StatelessWidget {
+class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Second Route'),
+        title: Text('First Route'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              child: Text('Open First route'),
+              child: Text('Open Second route'),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: (context) =>
-                          FirstRoute()), // Navigate to second route when tapped.
+                          SecondRoute()), // Navigate to second route when tapped.
                 );
               },
             ),
