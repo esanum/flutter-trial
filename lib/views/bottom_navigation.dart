@@ -37,17 +37,12 @@ class BottomNavigation extends StatelessWidget {
         icon,
         color: _tabColor(index: index),
       ),
-      title: Text(
-        tabName,
-        style: TextStyle(
-          color: _tabColor(index: index),
-          fontSize: 12,
-        ),
-      ),
+      label: tabName,
     );
   }
 
+  // TODO: this should use the default selected style
   Color _tabColor({int index}) {
-    return AppState.currentTab == index ? Colors.cyan : Colors.grey;
+    return AppState.currentTab == index ? Colors.green : Colors.grey;
   }
 }
