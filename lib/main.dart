@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'views/home_page.dart';
+
+import 'package:flutter_starter/views/app.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(title: 'Flutter Trial'),
+      home: App(),
     );
   }
 }
