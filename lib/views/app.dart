@@ -83,9 +83,6 @@ class AppState extends State<App> {
       // eventually breaking the app
       child: Scaffold(
         drawer: SideDrawer(),
-        appBar: AppBar(
-          title: Text("Flutter trial"),
-        ),
         // indexed stack shows only one child
         body: IndexedStack(
           index: currentTab,
