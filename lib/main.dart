@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_starter/core/preferences.dart';
 import 'package:flutter_starter/views/home_page.dart';
 
 import 'blocs/theme/theme_bloc.dart';
 import 'blocs/theme/theme_state.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Preferences.init();
   runApp(MyApp());
 }
 

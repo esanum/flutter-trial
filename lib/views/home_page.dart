@@ -6,6 +6,7 @@ import 'package:flutter_starter/networking/services.dart';
 import 'package:flutter_starter/views/lists/list_view_jobs.dart';
 import 'package:flutter_starter/views/lists/list_view_news.dart';
 import 'package:flutter_starter/views/web/web_view_container.dart';
+import 'package:flutter_starter/views/widgets/txt.dart';
 
 import 'albums/albums_screen.dart';
 
@@ -53,7 +54,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        backgroundColor: Theme.of(context).backgroundColor,
+        title: Txt(text: widget.title),
       ),
       body: Center(
         child: Column(

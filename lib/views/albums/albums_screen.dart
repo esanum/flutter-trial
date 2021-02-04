@@ -3,10 +3,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_starter/blocs/album/albums_bloc.dart';
 import 'package:flutter_starter/blocs/album/events.dart';
 import 'package:flutter_starter/blocs/album/states.dart';
+import 'package:flutter_starter/blocs/theme/theme_bloc.dart';
+import 'package:flutter_starter/blocs/theme/theme_events.dart';
+import 'package:flutter_starter/core/app_themes.dart';
+import 'package:flutter_starter/core/preferences.dart';
 import 'package:flutter_starter/model/album.dart';
 import 'package:flutter_starter/views/widgets/error.dart';
 import 'package:flutter_starter/views/widgets/list_row.dart';
 import 'package:flutter_starter/views/widgets/loading.dart';
+import 'package:flutter_starter/views/widgets/txt.dart';
+
+// https://itnext.io/bloc-pattern-in-flutter-explained-with-real-example-a858e69eb5b8
+// https://itnext.io/theming-your-app-in-flutter-using-bloc-save-reload-62048a330584
 
 class AlbumsScreen extends StatefulWidget {
   @override
@@ -14,10 +22,10 @@ class AlbumsScreen extends StatefulWidget {
 }
 
 class _AlbumsScreenState extends State<AlbumsScreen> {
-  //
   @override
   void initState() {
     super.initState();
+    _loadTheme();
     _loadAlbums();
   }
 
@@ -27,11 +35,33 @@ class _AlbumsScreenState extends State<AlbumsScreen> {
     // context.watch OR context.read is not working ?!
   }
 
+  _loadTheme() async {
+    BlocProvider.of<ThemeBloc>(context)
+        .add(ThemeEvent(appTheme: Preferences.getTheme()));
+  }
+
+  void setTheme(bool darkTheme) {
+    AppTheme selectedTheme =
+        darkTheme ? AppTheme.lightTheme : AppTheme.darkTheme;
+    BlocProvider.of<ThemeBloc>(context)
+        .add(ThemeEvent(appTheme: selectedTheme));
+    Preferences.saveTheme(selectedTheme);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Albums'),
+        backgroundColor: Theme.of(context).backgroundColor,
+        title: Txt(text: "Albums"),
+        actions: [
+          Switch(
+            value: Preferences.getTheme() == AppTheme.lightTheme,
+            onChanged: (val) {
+              setTheme(val);
+            },
+          )
+        ],
       ),
       body: Container(
         child: _body(),
