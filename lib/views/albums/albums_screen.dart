@@ -52,7 +52,10 @@ class _AlbumsScreenState extends State<AlbumsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).backgroundColor,
+        leading: BackButton(
+            color: Theme.of(context).textTheme.bodyText1.color
+        ),
+        backgroundColor: Theme.of(context).primaryColor,
         title: Txt(text: "Albums"),
         actions: [
           Switch(

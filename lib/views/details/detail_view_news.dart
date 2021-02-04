@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/core/styles.dart';
 import 'package:flutter_starter/model/news_detail.dart';
+import 'package:flutter_starter/views/widgets/txt.dart';
 
 class NewsDetailScreen extends StatelessWidget {
   final NewsDetail newsDetail;
@@ -11,9 +11,9 @@ class NewsDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text(
-          newsDetail.title,
-          style: Styles.navBarTitle,
+            title: Txt(
+          text: newsDetail.title,
+          style: Theme.of(context).textTheme.headline1,
         )),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -31,24 +31,26 @@ class NewsDetailScreen extends StatelessWidget {
 
   List<Widget> _renderInfo(BuildContext context, NewsDetail newsDetail) {
     var result = List<Widget>();
-    result.add(_sectionTitle(newsDetail.title));
-    result.add(_sectionText(newsDetail.description));
+    result.add(_sectionTitle(context, newsDetail.title));
+    result.add(_sectionText(context, newsDetail.description));
     return result;
   }
 
-  Widget _sectionTitle(String text) {
+  Widget _sectionTitle(BuildContext context, String text) {
     return Container(
         padding: EdgeInsets.fromLTRB(25.0, 25.0, 25.0, 10.0),
-        child:
-            Text(text, textAlign: TextAlign.left, style: Styles.headerLarge));
+        child: Txt(
+            text: text,
+            textAlign: TextAlign.left,
+            style: Theme.of(context).textTheme.bodyText1));
   }
 
-  Widget _sectionText(String text) {
+  Widget _sectionText(BuildContext context, String text) {
     return Container(
         padding: EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 15.0),
-        child: Text(
-          text,
-          style: Styles.textDefault,
+        child: Txt(
+          text: text,
+          style: Theme.of(context).textTheme.bodyText2,
         ));
   }
 

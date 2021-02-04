@@ -50,23 +50,25 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  // Theme back button: https://stackoverflow.com/a/51508446
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).backgroundColor,
+        backgroundColor: Theme.of(context).primaryColor,
         title: Txt(text: widget.title),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+            Txt(
+              text: 'You have pushed the button this many times:',
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            Txt(
+              text: '$_counter',
+              style: Theme.of(context).textTheme.headline1,
+              color: Theme.of(context).textTheme.bodyText1.color,
             ),
             _widgetOptions.elementAt(_selectedIndex),
           ],

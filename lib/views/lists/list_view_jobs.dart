@@ -3,9 +3,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_starter/model/job.dart';
+import 'package:flutter_starter/views/widgets/txt.dart';
 import 'package:http/http.dart' as http;
-
-import '../../core/styles.dart';
 
 class JobsListViewScreen extends StatefulWidget {
   @override
@@ -25,10 +24,11 @@ class _JobsListViewScreenState extends State<JobsListViewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-          title: Text(
-        "Job Portal",
-        style: Styles.navBarTitle,
+          title: Txt(
+        text: "Job Portal",
+        style: Theme.of(context).textTheme.headline1,
       )),
       body: Center(child: projectWidget()),
     );
@@ -42,7 +42,7 @@ class _JobsListViewScreenState extends State<JobsListViewScreen> {
           List<Job> data = snapshot.data;
           return _jobsListView(data);
         } else if (snapshot.hasError) {
-          return Text("${snapshot.error}");
+          return Txt(text: "${snapshot.error}");
         }
         return CircularProgressIndicator();
       },
@@ -70,12 +70,9 @@ class _JobsListViewScreenState extends State<JobsListViewScreen> {
   }
 
   ListTile _tile(String title, String subtitle, IconData icon) => ListTile(
-        title: Text(title,
-            style: TextStyle(
-              fontWeight: FontWeight.w500,
-              fontSize: 20,
-            )),
-        subtitle: Text(subtitle),
+        title: Txt(text: title, style: Theme.of(context).textTheme.bodyText1),
+        subtitle:
+            Txt(text: subtitle, style: Theme.of(context).textTheme.bodyText2),
         leading: Icon(
           icon,
           color: Colors.blue[500],

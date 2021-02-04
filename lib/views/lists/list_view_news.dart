@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_starter/model/news_detail.dart';
-import 'package:flutter_starter/core/styles.dart';
 import 'package:flutter_starter/views/details/detail_view_news.dart';
+import 'package:flutter_starter/views/widgets/txt.dart';
 import 'package:http/http.dart' as http;
 
 // https://medium.com/stackavenue/flutter-fetch-data-from-api-display-in-listview-33c49670e490
@@ -27,10 +27,11 @@ class _NewsScreenState extends State<NewsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         appBar: AppBar(
-            title: Text(
-          "Latest News",
-          style: Styles.navBarTitle,
+            title: Txt(
+          text: "Latest News",
+          style: Theme.of(context).textTheme.headline1,
         )),
         body: ListView.builder(
             itemCount: this.items.length, itemBuilder: _listViewItemBuilder));
@@ -61,7 +62,8 @@ class _NewsScreenState extends State<NewsScreen> {
   }
 
   Widget _itemTitle(NewsDetail newsDetail) {
-    return Text(newsDetail.title, style: Styles.textDefault);
+    return Txt(
+        text: newsDetail.title, style: Theme.of(context).textTheme.bodyText1);
   }
 
   Widget _listViewItemBuilder(BuildContext context, int index) {
