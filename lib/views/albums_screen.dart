@@ -22,7 +22,9 @@ class _AlbumsScreenState extends State<AlbumsScreen> {
   }
 
   _loadAlbums() async {
-    context.bloc<AlbumsBloc>().add(AlbumEvents.fetchAlbums);
+    //context.bloc<AlbumsBloc>().add(AlbumEvents.fetchAlbums);
+    BlocProvider.of<AlbumsBloc>(context).add(AlbumEvents.fetchAlbums);
+    // context.watch OR context.read is not working ?!
   }
 
   @override
