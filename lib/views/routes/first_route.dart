@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/views/second_route.dart';
+import 'package:flutter_starter/views/routes/second_route.dart';
 
-class ThirdRoute extends StatelessWidget {
+class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Third Route'),
+        title: Text('First Route'),
       ),
       body: Center(
         child: Column(

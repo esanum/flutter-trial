@@ -29,6 +29,8 @@ dependencies:
   flutter_bloc: ^6.0.4
   equatable: ^1.2.4
   shared_preferences: ^0.5.12+4
+  rxdart: ^0.23.1
+  provider: ^4.3.3
 
 dev_dependencies:
   integration_test: ^1.0.0

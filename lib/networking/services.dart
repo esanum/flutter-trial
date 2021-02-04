@@ -7,7 +7,7 @@ abstract class AlbumsRepo {
 }
 
 class AlbumServices implements AlbumsRepo {
-  //
+
   static const _baseUrl = 'jsonplaceholder.typicode.com';
   static const String _GET_ALBUMS = '/albums';
 

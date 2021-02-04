@@ -9,7 +9,7 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
   ThemeBloc()
       : super(
           ThemeState(
-            themeData: AppThemes.appThemeData[AppTheme.lightTheme],
+            themeData: AppThemes.appThemeData[AppTheme.darkTheme],
           ),
         );
 
