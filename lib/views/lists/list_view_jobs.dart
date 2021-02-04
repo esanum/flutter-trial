@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_starter/model/job.dart';
 import 'package:http/http.dart' as http;
 
-import '../../styles.dart';
+import '../../core/styles.dart';
 
 class JobsListViewScreen extends StatefulWidget {
   @override

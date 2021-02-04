@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/styles.dart';
+import 'package:flutter_starter/core/styles.dart';
 import 'package:flutter_starter/model/news_detail.dart';
 
 class NewsDetailScreen extends StatelessWidget {
