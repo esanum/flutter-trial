@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+// https://itnext.io/theming-your-app-in-flutter-using-bloc-save-reload-62048a330584
+
 class AppThemes {
   static const _textSizeHeadline = 25.0;
   static const _textSizeLarge = 20.0;
@@ -21,12 +23,10 @@ class AppThemes {
       scaffoldBackgroundColor: _backgroundColorDefault,
       primarySwatch: Colors.blue,
       primaryColor: _primaryColor,
-      primaryTextTheme:
-          TextTheme(headline6: TextStyle(color: _backgroundColorDefault)),
+      primaryTextTheme: TextTheme(headline6: TextStyle(color: _backgroundColorDefault)),
       primaryIconTheme: IconThemeData(color: _backgroundColorDefault),
       accentColor: _accentColor,
-      accentTextTheme:
-          TextTheme(headline6: TextStyle(color: _backgroundColorDefault)),
+      accentTextTheme: TextTheme(headline6: TextStyle(color: _backgroundColorDefault)),
       accentIconTheme: IconThemeData(color: _backgroundColorDefault),
       backgroundColor: _backgroundColorDefault,
       textTheme: TextTheme(
@@ -34,6 +34,16 @@ class AppThemes {
           fontFamily: fontNameDefault,
           color: _textColorStrong,
           fontSize: _textSizeHeadline,
+        ),
+        headline5: TextStyle(
+          fontSize: 14.0,
+          fontFamily: 'Hind',
+          color: _textColorStrong,
+        ),
+        headline6: TextStyle(
+          fontSize: 36.0,
+          fontStyle: FontStyle.italic,
+          color: _textColorStrong,
         ),
         bodyText1: TextStyle(
           fontFamily: fontNameDefault,
@@ -51,12 +61,10 @@ class AppThemes {
       scaffoldBackgroundColor: _backgroundColorStrong,
       primarySwatch: Colors.teal,
       primaryColor: _primaryColor,
-      primaryTextTheme:
-          TextTheme(headline6: TextStyle(color: _backgroundColorStrong)),
+      primaryTextTheme: TextTheme(headline6: TextStyle(color: _backgroundColorStrong)),
       primaryIconTheme: IconThemeData(color: _backgroundColorStrong),
       accentColor: _accentColor,
-      accentTextTheme:
-          TextTheme(headline6: TextStyle(color: _backgroundColorStrong)),
+      accentTextTheme: TextTheme(headline6: TextStyle(color: _backgroundColorStrong)),
       accentIconTheme: IconThemeData(color: _backgroundColorStrong),
       backgroundColor: _backgroundColorStrong,
       textTheme: TextTheme(
@@ -64,6 +72,16 @@ class AppThemes {
           fontFamily: fontNameDefault,
           color: _textColorDefault,
           fontSize: _textSizeHeadline,
+        ),
+        headline5: TextStyle(
+          fontSize: 14.0,
+          fontFamily: 'Hind',
+          color: _textColorDefault,
+        ),
+        headline6: TextStyle(
+          fontSize: 36.0,
+          fontStyle: FontStyle.italic,
+          color: _textColorDefault,
         ),
         bodyText1: TextStyle(
           fontFamily: fontNameDefault,

@@ -3,7 +3,6 @@ import 'package:flutter_starter/model/album.dart';
 import 'package:flutter_starter/views/widgets/txt.dart';
 
 class ListRow extends StatelessWidget {
-  //
   final Album album;
 
   ListRow({this.album});

@@ -29,32 +29,27 @@ class _AlbumsScreenState extends State<AlbumsScreen> {
     _loadAlbums();
   }
 
+  _loadTheme() async {
+    BlocProvider.of<ThemeBloc>(context).add(ThemeEvent(appTheme: Preferences.getTheme()));
+  }
+
+  void setTheme(bool darkTheme) {
+    AppTheme selectedTheme = darkTheme ? AppTheme.lightTheme : AppTheme.darkTheme;
+    BlocProvider.of<ThemeBloc>(context).add(ThemeEvent(appTheme: selectedTheme));
+    Preferences.saveTheme(selectedTheme);
+  }
+
   _loadAlbums() async {
     //context.bloc<AlbumsBloc>().add(AlbumEvents.fetchAlbums);
     BlocProvider.of<AlbumsBloc>(context).add(AlbumEvents.fetchAlbums);
     // context.watch OR context.read is not working ?!
   }
 
-  _loadTheme() async {
-    BlocProvider.of<ThemeBloc>(context)
-        .add(ThemeEvent(appTheme: Preferences.getTheme()));
-  }
-
-  void setTheme(bool darkTheme) {
-    AppTheme selectedTheme =
-        darkTheme ? AppTheme.lightTheme : AppTheme.darkTheme;
-    BlocProvider.of<ThemeBloc>(context)
-        .add(ThemeEvent(appTheme: selectedTheme));
-    Preferences.saveTheme(selectedTheme);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: BackButton(
-            color: Theme.of(context).textTheme.bodyText1.color
-        ),
+        leading: BackButton(color: Theme.of(context).textTheme.bodyText1.color),
         backgroundColor: Theme.of(context).primaryColor,
         title: Txt(text: "Albums"),
         actions: [
@@ -75,8 +70,7 @@ class _AlbumsScreenState extends State<AlbumsScreen> {
   _body() {
     return Column(
       children: [
-        BlocBuilder<AlbumsBloc, AlbumsState>(
-            builder: (BuildContext context, AlbumsState state) {
+        BlocBuilder<AlbumsBloc, AlbumsState>(builder: (BuildContext context, AlbumsState state) {
           if (state is AlbumsListError) {
             final error = state.error;
             String message = '${error.message}\nTap to Retry.';
