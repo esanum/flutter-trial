@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starter/views/widgets/txt.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewContainer extends StatefulWidget {
@@ -21,8 +22,10 @@ class _WebViewContainerState extends State<WebViewContainer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(_title),
+        leading: BackButton(color: Theme.of(context).textTheme.bodyText1.color),
+        title: Txt(text: _title, style: Theme.of(context).textTheme.headline1),
       ),
       body: Column(
         children: [

@@ -1,8 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_starter/blocs/album/albums_bloc.dart';
+import 'package:flutter_starter/networking/services.dart';
 import 'package:flutter_starter/views/lists/list_view_jobs.dart';
-import 'package:flutter_starter/views/web_view_container.dart';
 import 'package:flutter_starter/views/lists/list_view_news.dart';
+import 'package:flutter_starter/views/web/web_view_container.dart';
+import 'package:flutter_starter/views/widgets/txt.dart';
+
+import 'albums/albums_screen.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -32,6 +38,10 @@ class _HomePageState extends State<HomePage> {
       'Index 2: School',
       style: optionStyle,
     ),
+    Text(
+      'Index 3: BLoC',
+      style: optionStyle,
+    ),
   ];
 
   void _incrementCounter() {
@@ -40,22 +50,25 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  // Theme back button: https://stackoverflow.com/a/51508446
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        backgroundColor: Theme.of(context).primaryColor,
+        title: Txt(text: widget.title),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+            Txt(
+              text: 'You have pushed the button this many times:',
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            Txt(
+              text: '$_counter',
+              style: Theme.of(context).textTheme.headline1,
+              color: Theme.of(context).textTheme.bodyText1.color,
             ),
             _widgetOptions.elementAt(_selectedIndex),
           ],
@@ -74,6 +87,10 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.accessibility),
             label: 'List + Detail',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.block),
+            label: 'Bloc',
           ),
         ],
         currentIndex: _selectedIndex,
@@ -119,16 +136,36 @@ class _HomePageState extends State<HomePage> {
           route = NewsScreen();
         }
         break;
+      case 3:
+        //route = AlbumsScreen();
+        Navigator.of(context).push(
+          MaterialPageRoute<AlbumsScreen>(
+            builder: (context) {
+              return BlocProvider(
+                create: (BuildContext context) =>
+                    AlbumsBloc(albumsRepo: AlbumServices()),
+                child: AlbumsScreen(),
+              );
+            },
+          ),
+        );
+        route = null;
+        break;
       default:
         {
           //statements;
         }
         break;
     }
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-          builder: (context) => route), // Navigate to second route when tapped.
-    );
+    if (!isNullEmptyOrFalse(route)) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) =>
+                route), // Navigate to second route when tapped.
+      );
+    }
   }
+
+  bool isNullEmptyOrFalse(Object o) => o == null || false == o || "" == o;
 }

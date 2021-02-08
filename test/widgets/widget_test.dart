@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_starter/views/widgets/test_widget.dart';
+import 'package:flutter_starter/views/widgets/txt.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -25,7 +26,7 @@ void _testMyWidget() {
     // Build an app with a Text widget that displays the letter 'H'.
     await tester.pumpWidget(MaterialApp(
       home: Scaffold(
-        body: Text('H'),
+        body: Txt(text: 'H'),
       ),
     ));
 
