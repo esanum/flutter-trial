@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_starter/core/app_themes.dart';
@@ -15,7 +13,6 @@ void main() {
 
 void _testCounter() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-
     TestWidgetsFlutterBinding.ensureInitialized();
     // Mock preferences
     SharedPreferences.setMockInitialValues({}); //set values here
