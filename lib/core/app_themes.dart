@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starter/core/color_utils.dart';
 
 // https://itnext.io/theming-your-app-in-flutter-using-bloc-save-reload-62048a330584
 
@@ -7,6 +8,7 @@ class AppThemes {
   static const _textSizeLarge = 20.0;
   static const _textSizeDefault = 16.0;
 
+  static final String _priimaryHexColor = "#0EEAD2";
   static final Color _primaryColor = Colors.deepPurple;
   static final Color _accentColor = Colors.green;
 
@@ -22,7 +24,7 @@ class AppThemes {
     AppTheme.lightTheme: ThemeData(
       scaffoldBackgroundColor: _backgroundColorDefault,
       primarySwatch: Colors.blue,
-      primaryColor: _primaryColor,
+      primaryColor: hexToColor(_priimaryHexColor),
       primaryTextTheme: TextTheme(headline6: TextStyle(color: _backgroundColorDefault)),
       primaryIconTheme: IconThemeData(color: _backgroundColorDefault),
       accentColor: _accentColor,
