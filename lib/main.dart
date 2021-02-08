@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_starter/core/preferences.dart';
+import 'package:flutter_starter/core/theme_preferences.dart';
 import 'package:flutter_starter/views/home_page.dart';
 
 import 'blocs/theme/theme_bloc.dart';
 import 'blocs/theme/theme_state.dart';
 
+import 'package:get/get.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Preferences.init();
+  await ThemePreferences.init();
   runApp(MyApp());
 }
 
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
       create: (context) => ThemeBloc(),
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: (BuildContext context, ThemeState themeState) {
-          return MaterialApp(
+          return GetMaterialApp(
             title: 'Flutter Trial',
             debugShowCheckedModeBanner: false,
             theme: themeState.themeData,

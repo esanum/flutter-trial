@@ -24,6 +24,7 @@ class _WebViewContainerState extends State<WebViewContainer> {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
+        leading: BackButton(color: Theme.of(context).textTheme.bodyText1.color),
         title: Txt(text: _title, style: Theme.of(context).textTheme.headline1),
       ),
       body: Column(

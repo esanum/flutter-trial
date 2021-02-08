@@ -31,6 +31,7 @@ dependencies:
   shared_preferences: ^0.5.12+4
   rxdart: ^0.23.1
   provider: ^4.3.3
+  get: ^3.24.0
 
 dev_dependencies:
   integration_test: ^1.0.0

@@ -1,9 +1,11 @@
 import 'dart:convert';
+import 'dart:ui';
 
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_starter/core/app_themes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class Preferences {
+class ThemePreferences {
   //
   static SharedPreferences preferences;
   static const String KEY_SELECTED_THEME = 'key_selected_theme';
@@ -23,7 +25,8 @@ class Preferences {
   static AppTheme getTheme() {
     String theme = preferences.getString(KEY_SELECTED_THEME);
     if (null == theme) {
-      return AppTheme.lightTheme;
+      var brightness = SchedulerBinding.instance.window.platformBrightness; // system theme
+      return brightness == Brightness.dark ? AppTheme.darkTheme : AppTheme.lightTheme;
     }
     return getThemeFromString(jsonDecode(theme));
   }

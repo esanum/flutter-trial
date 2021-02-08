@@ -6,7 +6,7 @@ import 'package:flutter_starter/blocs/album/states.dart';
 import 'package:flutter_starter/blocs/theme/theme_bloc.dart';
 import 'package:flutter_starter/blocs/theme/theme_events.dart';
 import 'package:flutter_starter/core/app_themes.dart';
-import 'package:flutter_starter/core/preferences.dart';
+import 'package:flutter_starter/core/theme_preferences.dart';
 import 'package:flutter_starter/model/album.dart';
 import 'package:flutter_starter/views/widgets/error.dart';
 import 'package:flutter_starter/views/widgets/list_row.dart';
@@ -30,13 +30,13 @@ class _AlbumsScreenState extends State<AlbumsScreen> {
   }
 
   _loadTheme() async {
-    BlocProvider.of<ThemeBloc>(context).add(ThemeEvent(appTheme: Preferences.getTheme()));
+    BlocProvider.of<ThemeBloc>(context).add(ThemeEvent(appTheme: ThemePreferences.getTheme()));
   }
 
   void setTheme(bool darkTheme) {
     AppTheme selectedTheme = darkTheme ? AppTheme.lightTheme : AppTheme.darkTheme;
     BlocProvider.of<ThemeBloc>(context).add(ThemeEvent(appTheme: selectedTheme));
-    Preferences.saveTheme(selectedTheme);
+    ThemePreferences.saveTheme(selectedTheme);
   }
 
   _loadAlbums() async {
@@ -54,7 +54,7 @@ class _AlbumsScreenState extends State<AlbumsScreen> {
         title: Txt(text: "Albums"),
         actions: [
           Switch(
-            value: Preferences.getTheme() == AppTheme.lightTheme,
+            value: ThemePreferences.getTheme() == AppTheme.lightTheme,
             onChanged: (val) {
               setTheme(val);
             },
